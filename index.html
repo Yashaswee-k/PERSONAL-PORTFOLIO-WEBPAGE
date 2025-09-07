@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Yashaswee Kandula | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <nav>
+      <div class="logo">Yashaswee Kandula</div>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><button id="toggle-dark">🌙</button></li>
+      </ul>
+      <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section id="home" class="section hero">
+    <h1>Hello, I'm <span class="highlight">Yashaswee Kandula</span></h1>
+    <p>A Creative Web Developer Crafting Seamless User Experiences</p>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="section about">
+    <h2>About Me</h2>
+    <div class="about-content">
+      <p>
+        I'm a passionate web developer dedicated to building fast, beautiful, and accessible websites.
+        With an eye for detail and a love for clean code, I transform ideas into interactive digital experiences.
+        I enjoy working with modern technologies and constantly strive to learn and grow.
+      </p>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="section">
+    <h2>My Skills</h2>
+    <div class="skill">
+      <label>HTML</label>
+      <div class="skill-bar"><div class="progress" style="width: 95%"></div></div>
+    </div>
+    <div class="skill">
+      <label>CSS</label>
+      <div class="skill-bar"><div class="progress" style="width: 90%"></div></div>
+    </div>
+    <div class="skill">
+      <label>JavaScript</label>
+      <div class="skill-bar"><div class="progress" style="width: 85%"></div></div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="section">
+    <h2>Projects</h2>
+    <div class="projects">
+      <div class="project-card">
+        <h3>Portfolio Website</h3>
+        <p>Built with HTML, CSS, and JavaScript</p>
+      </div>
+      <div class="project-card">
+        <h3>Todo App</h3>
+        <p>Task manager with local storage using Vanilla JS</p>
+      </div>
+      <div class="project-card">
+        <h3>Weather App</h3>
+        <p>Live weather using OpenWeather API</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section">
+    <h2>Contact Me</h2>
+    <form id="contactForm">
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 Yashaswee Kandula | All rights reserved.</p>
+  </footer>
+
+  <!-- SCROLL TO TOP -->
+  <button id="scrollToTopBtn">↑</button>
+
+  <script src="script.js"></script>
+</body>
+</html>

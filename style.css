@@ -1,0 +1,256 @@
+:root {
+  --bg-light: #f5f7fa;
+  --bg-dark: #1a1a1a;
+  --text-light: #1a1a1a;
+  --text-dark: #f1f1f1;
+  --accent: #3f51b5;
+  --highlight: #ffc107;
+  --card-bg: #ffffff;
+  --card-dark-bg: #2c2c2c;
+  --nav-bg: #222;
+  --button-bg: #3f51b5;
+  --button-hover: #303f9f;
+}
+
+/* -------------------- BODY & BASE -------------------- */
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(-45deg, #fceabb, #e0c3fc, #d4fc79, #a1c4fd);
+  background-size: 400% 400%;
+  animation: gradientShift 20s ease infinite;
+  color: var(--text-light);
+  transition: background 0.4s, color 0.4s;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+body.dark {
+  background: var(--bg-dark) !important;
+  color: var(--text-dark);
+}
+
+body.dark .project-card,
+body.dark input,
+body.dark textarea {
+  background: var(--card-dark-bg);
+  color: var(--text-dark);
+}
+
+/* -------------------- HEADER -------------------- */
+
+header {
+  background: var(--nav-bg);
+  color: white;
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  margin: auto;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+}
+
+.nav-links a:hover {
+  color: var(--highlight);
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+}
+
+/* -------------------- SECTIONS -------------------- */
+
+.section {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.hero {
+  background: var(--accent);
+  color: white;
+}
+
+.highlight {
+  color: var(--highlight);
+}
+
+/* -------------------- ABOUT -------------------- */
+
+.about-content {
+  max-width: 700px;
+  margin: 0 auto;
+  padding-top: 1rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* -------------------- SKILLS -------------------- */
+
+.skill {
+  margin: 1rem auto;
+  width: 80%;
+  text-align: left;
+}
+
+.skill-bar {
+  background: #ccc;
+  height: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress {
+  height: 100%;
+  background: var(--accent);
+  animation: fillBar 1s ease-in-out;
+}
+
+@keyframes fillBar {
+  from {
+    width: 0;
+  }
+}
+
+/* -------------------- PROJECTS -------------------- */
+
+.projects {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.project-card {
+  width: 250px;
+  padding: 1rem;
+  background: var(--card-bg);
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px rgba(0,0,0,0.2);
+}
+
+/* -------------------- CONTACT FORM -------------------- */
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 300px;
+  margin: auto;
+}
+
+input,
+textarea {
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: var(--card-bg);
+  color: inherit;
+}
+
+button {
+  padding: 0.8rem;
+  background: var(--button-bg);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: var(--button-hover);
+}
+
+/* -------------------- FOOTER -------------------- */
+
+footer {
+  background: var(--nav-bg);
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: 2rem;
+}
+
+/* -------------------- SCROLL TO TOP -------------------- */
+
+#scrollToTopBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: none;
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 0.8rem;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+/* -------------------- RESPONSIVE -------------------- */
+
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: var(--nav-bg);
+    flex-direction: column;
+    width: 200px;
+    display: none;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .projects {
+    flex-direction: column;
+    align-items: center;
+  }
+}
